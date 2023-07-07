@@ -1,0 +1,34 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 33
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+
+    flavorDimensions "mode"
+
+    productFlavors {
+        manual {
+            dimension "mode"
+            applicationId "com.pw.share.manual"
+        }
+        automatic {
+            dimension "mode"
+            applicationId "com.pw.shar.automatic"
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.google.android.gms:play-services-nearby:18.5.0'
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.multidex:multidex:2.0.1'
+}
+
